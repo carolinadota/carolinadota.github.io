@@ -1,0 +1,7 @@
+import { defineConfig } from 'astro/config';
+
+// https://astro.build/config
+export default defineConfig({
+  site: 'https://carolinadota.github.io',
+  base: '/carolinadota.github.io'
+});
