@@ -95,7 +95,7 @@ This project is configured for GitHub Pages deployment:
    ```
 
 2. **Deploy to GitHub Pages:**
-   The site will be available at `https://carolinadota.github.io/carolinadota.github.io`
+   The site will be available at `https://carolinadota.github.io`
 
 ### Other Platforms
 
@@ -109,7 +109,7 @@ You can deploy to any static hosting service:
 
 ### Astro Config (`astro.config.mjs`)
 - Site URL: `https://carolinadota.github.io`
-- Base path: `/carolinadota.github.io`
+- Base path: `/` (root)
 
 ### Package.json
 - Astro version: ^4.0.0
