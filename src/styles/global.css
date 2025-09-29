@@ -1,4 +1,4 @@
-/* Global styles */
+/* Global styles - minimal and clean dark mode */
 * {
   box-sizing: border-box;
 }
@@ -11,34 +11,48 @@ html {
 body {
   margin: 0;
   padding: 0;
-  background-color: #f8f9fa;
-  color: #333;
+  background-color: #1a1a1a;
+  color: #e0e0e0;
 }
 
-/* Utility classes */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
+/* Remove any default margins and ensure clean typography */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-weight: 400;
 }
 
-.text-center {
-  text-align: center;
+p {
+  margin: 0 0 1rem 0;
+  color: #e0e0e0;
 }
 
-.mb-1 { margin-bottom: 0.5rem; }
-.mb-2 { margin-bottom: 1rem; }
-.mb-3 { margin-bottom: 1.5rem; }
-.mb-4 { margin-bottom: 2rem; }
+ul, ol {
+  margin: 0 0 1rem 0;
+  padding-left: 1.5rem;
+}
 
-.mt-1 { margin-top: 0.5rem; }
-.mt-2 { margin-top: 1rem; }
-.mt-3 { margin-top: 1.5rem; }
-.mt-4 { margin-top: 2rem; }
+li {
+  margin: 0.25rem 0;
+  color: #e0e0e0;
+}
+
+a {
+  color: #e0e0e0;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: #ffffff;
+}
+
+/* Ensure consistent spacing */
+section {
+  margin: 2rem 0;
+}
 
 /* Responsive utilities */
 @media (max-width: 768px) {
-  .container {
-    padding: 0 0.5rem;
+  body {
+    padding: 1rem;
   }
 }

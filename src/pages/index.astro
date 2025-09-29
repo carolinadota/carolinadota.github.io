@@ -2,149 +2,34 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Welcome to Carolina Dota's Website">
-  <div class="hero">
-    <h1>Hello, I'm Carolina Dota</h1>
-    <p class="subtitle">Welcome to my personal website</p>
-    <div class="cta-buttons">
-      <a href="/about" class="btn btn-primary">Learn More</a>
-      <a href="/contact" class="btn btn-secondary">Get in Touch</a>
-    </div>
-  </div>
+<Layout title="Carolina Dota">
+  <h1>Carolina</h1>
   
-  <section class="features">
-    <h2>What I Do</h2>
-    <div class="feature-grid">
-      <div class="feature-card">
-        <h3>Web Development</h3>
-        <p>Building modern, responsive websites with the latest technologies.</p>
-      </div>
-      <div class="feature-card">
-        <h3>Design</h3>
-        <p>Creating beautiful and user-friendly interfaces that delight users.</p>
-      </div>
-      <div class="feature-card">
-        <h3>Innovation</h3>
-        <p>Exploring new technologies and pushing the boundaries of what's possible.</p>
-      </div>
-    </div>
-  </section>
+  <p>basic information about me and some of my work</p>
+  
+  <h2>interests include but are not limited to:</h2>
+  
+  <ul>
+    <li>web development (frontend, backend, full-stack applications)</li>
+    <li>user experience design (interface design, user research, accessibility)</li>
+    <li>programming languages (javascript, typescript, python, rust)</li>
+    <li>currently working in software development</li>
+  </ul>
+  
+  <h2>misc info</h2>
+  
+  <ul>
+    <li>tools i use: vscode, git, node.js, astro, react, tailwind css</li>
+    <li>location: based in the united states</li>
+  </ul>
+  
+  <h2>links</h2>
+  
+  <p>you may want to check out the about section, or the contact page</p>
+  
+  <p>maybe follow my <a href="https://github.com/carolinadota" target="_blank">github</a> for more frequent updates</p>
+  
+  <h2>contact me</h2>
+  
+  <p>email provided in contact page, others possible on request</p>
 </Layout>
-
-<style>
-  .hero {
-    text-align: center;
-    padding: 4rem 0;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    border-radius: 1rem;
-    margin-bottom: 3rem;
-  }
-  
-  .hero h1 {
-    font-size: 3rem;
-    margin: 0 0 1rem 0;
-    font-weight: 700;
-  }
-  
-  .subtitle {
-    font-size: 1.25rem;
-    margin: 0 0 2rem 0;
-    opacity: 0.9;
-  }
-  
-  .cta-buttons {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  
-  .btn {
-    padding: 0.75rem 1.5rem;
-    border-radius: 0.5rem;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.2s;
-    display: inline-block;
-  }
-  
-  .btn-primary {
-    background: white;
-    color: #667eea;
-  }
-  
-  .btn-primary:hover {
-    background: #f8f9fa;
-    transform: translateY(-2px);
-  }
-  
-  .btn-secondary {
-    background: transparent;
-    color: white;
-    border: 2px solid white;
-  }
-  
-  .btn-secondary:hover {
-    background: white;
-    color: #667eea;
-    transform: translateY(-2px);
-  }
-  
-  .features {
-    margin: 3rem 0;
-  }
-  
-  .features h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
-    color: #333;
-  }
-  
-  .feature-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-  }
-  
-  .feature-card {
-    background: white;
-    padding: 2rem;
-    border-radius: 1rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-  
-  .feature-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-  }
-  
-  .feature-card h3 {
-    color: #667eea;
-    margin: 0 0 1rem 0;
-    font-size: 1.5rem;
-  }
-  
-  .feature-card p {
-    color: #666;
-    line-height: 1.6;
-    margin: 0;
-  }
-  
-  @media (max-width: 768px) {
-    .hero h1 {
-      font-size: 2rem;
-    }
-    
-    .cta-buttons {
-      flex-direction: column;
-      align-items: center;
-    }
-    
-    .btn {
-      width: 200px;
-    }
-  }
-</style>
