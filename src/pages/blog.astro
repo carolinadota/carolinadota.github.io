@@ -1,77 +1,81 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+// Get all blog posts
+const posts = await Astro.glob('../posts/*.md');
+
+// Sort posts by date (newest first)
+const sortedPosts = posts.sort((a, b) => {
+  const dateA = new Date(a.frontmatter.date);
+  const dateB = new Date(b.frontmatter.date);
+  return dateB.getTime() - dateA.getTime();
+});
+
+// Format date as MM-DD-YYYY
+function formatDate(dateString: string) {
+  const date = new Date(dateString);
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const day = String(date.getDate()).padStart(2, '0');
+  const year = date.getFullYear();
+  return `${month}-${day}-${year}`;
+}
+
+// Convert title to slug
+function titleToSlug(title: string) {
+  return title
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
 ---
 
 <Layout title="Blog - Carolina Dota" description="Blog posts and articles by Carolina Dota">
-  <h1>blog</h1>
+  <h1>Latest Posts</h1>
   
-  <p>
-    thoughts, tutorials, and insights about web development, design, and technology.
-  </p>
-  
-  <article>
-    <h2>getting started with astro</h2>
-    <p><small>september 2025</small></p>
-    <p>
-      astro is a modern static site generator that allows you to build faster websites 
-      with less client-side javascript. in this post, i'll share my experience getting 
-      started with astro and why i chose it for my personal website.
-    </p>
-    <p>
-      astro's approach to shipping zero javascript by default makes it incredibly fast. 
-      you can still add interactive components when needed using your favorite framework, 
-      but the default is pure html and css.
-    </p>
-  </article>
-  
-  <article>
-    <h2>building a minimalist portfolio</h2>
-    <p><small>august 2025</small></p>
-    <p>
-      when designing my personal website, i wanted something clean and minimal. 
-      no unnecessary animations, no bloated frameworks, just content that's easy to read 
-      and navigate.
-    </p>
-    <p>
-      i chose a dark theme with simple typography and ample whitespace. the goal was to 
-      let the content speak for itself without distractions.
-    </p>
-  </article>
-  
-  <article>
-    <h2>why accessibility matters</h2>
-    <p><small>july 2025</small></p>
-    <p>
-      accessibility isn't just about following guidelines—it's about making sure everyone 
-      can use your website. semantic html, proper contrast ratios, and keyboard navigation 
-      are all important considerations.
-    </p>
-    <p>
-      by building with accessibility in mind from the start, you create a better experience 
-      for all users, not just those who need assistive technologies.
-    </p>
-  </article>
+  <ul class="post-list">
+    {sortedPosts.map(post => (
+      <li>
+        <span class="post-date">{formatDate(post.frontmatter.date)}</span>
+        <span class="separator"> - </span>
+        <a href={`/blog/${titleToSlug(post.frontmatter.title)}`}>
+          {post.frontmatter.title}
+        </a>
+      </li>
+    ))}
+  </ul>
 </Layout>
 
 <style>
-  article {
-    margin: 3rem 0;
-    padding-bottom: 2rem;
-    border-bottom: 1px solid #333333;
+  h1 {
+    margin-bottom: 2rem;
   }
   
-  article:last-child {
-    border-bottom: none;
+  .post-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
   }
   
-  article h2 {
-    margin-top: 0;
-    font-size: 1.5rem;
-    font-weight: 400;
+  .post-list li {
+    margin: 0.75rem 0;
+    line-height: 1.6;
   }
   
-  small {
-    color: #999999;
-    font-size: 0.9rem;
+  .post-date {
+    color: #e0e0e0;
+  }
+  
+  .separator {
+    color: #e0e0e0;
+  }
+  
+  .post-list a {
+    color: #e0e0e0;
+    text-decoration: none;
+  }
+  
+  .post-list a:hover {
+    color: #ffffff;
+    text-decoration: underline;
   }
 </style>
